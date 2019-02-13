@@ -8,7 +8,7 @@
         stage('Build') {
               steps {
                   sh "mvn -B -DskipTests clean package"
-                  archiveArtifacts artifacts: 'target\pirates-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
+                  archiveArtifacts artifacts: 'target/pirates-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
             }
         }    
         
