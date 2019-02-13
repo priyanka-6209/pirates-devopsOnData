@@ -26,7 +26,7 @@ public class App {
         Statement st = null;
         ResultSet rs = null;
 
-        String url = "jdbc:mysql://192.168.10.10:3306/datafeed";
+        String url = "jdbc:mysql://51.38.72.0:4444/datafeed";
         String user = "root";
         String password = "password";
 		int count = 0;
