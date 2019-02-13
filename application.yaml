@@ -35,6 +35,6 @@ spec:
   ports:
   - port: 8030
     targetPort: 8030
-    nodePort: 30030
+    nodePort: 30029
   selector:
     app: pirates
