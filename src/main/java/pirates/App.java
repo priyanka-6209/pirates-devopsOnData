@@ -49,25 +49,11 @@ public class App {
 				
 				count++;
 				totalcount++;
-				
-				//if (count == 100) {
-					query  = "INSERT INTO  datafeed.raw_data ("
-						+"linenumber ,"
-						+"operation ,"
-						+"applicaion ,"
-						+"reportdate) "
-						+"VALUES " + values + ";";
-					
-					
-					
-					String query2 = "insert into raw_data (linenumber ,operation ,applicaion ,reportdate) values ('"+nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]+"');";
-					st.executeUpdate(query2);
-					count = 0;
-					values = "(0,0,0,0)";
-				//}
+				String query2 = "insert into raw_data (linenumber ,operation ,applicaion ,reportdate) values ('"+nextLine[0]+"','"+nextLine[1]+"','"+nextLine[2]+"','"+nextLine[3]+"');";
+				st.executeUpdate(query2);
+				count = 0;
+				values = "(0,0,0,0)";
 			}
-			//query  = "DELETE FROM `raw_data` WHERE `TRIP_NO` = '0'";
-			//st.executeUpdate(query);
 			
         } catch (SQLException ex) {
             Logger lgr = Logger.getLogger(App.class.getName());
@@ -89,6 +75,6 @@ public class App {
                 lgr.log(Level.WARNING, ex.getMessage(), ex);
             }
         }
-		System.out.println(totalcount);
+		System.out.println("Table gotupdated with "+totalcount+" rows");
     }
 }
