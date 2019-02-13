@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pirates
+  namespace: pirates
+  labels:
+    app: pirates
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: pirates
+  template:
+    metadata:
+      labels:
+        app: pirates
+    spec:
+      containers:
+      - name: pirates
+        image: priyanka6209/pirates:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pirates-c
+  namespace: pirates
+  labels:
+    app: pirates
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30030
+  selector:
+    app: pirates
