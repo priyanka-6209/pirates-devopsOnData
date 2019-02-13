@@ -3,69 +3,116 @@
   <groupId>com.example</groupId>
   <artifactId>pirates</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <!-- <dependencies>
   
-  <dependencies>
-  <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 <dependency>
     <groupId>com.opencsv</groupId>
     <artifactId>opencsv</artifactId>
-    <version>4.0</version>
+    <version>4.5</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<dependency<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-csv</artifactId>
-    <version>1.1</version>
-</dependency>
+
+<dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
     <version>5.1.6</version>
 </dependency>
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-csv</artifactId>
-    <version>1.1</version>
-</dependency>
-    
-  </dependencies>
-  <dependencyManagement>
-  </dependencyManagement>
+  
+  </dependencies>  -->
   
   <build>
+    <plugins>
+      <plugin>
+        <!-- Build an executable JAR -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>pirates.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+	<plugin>
+    	<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-resources-plugin</artifactId>
+    	<version>3.1.0</version>
+    	 <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>pirates.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+	</plugin>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+	
+		<plugin>
+    	   <groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-dependency-plugin</artifactId>
+    	<version>3.1.1</version>
+    	 <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>pirates.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+	</plugin>
+	
+	<plugin>
+    	   <groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-assembly-plugin</artifactId>
+    	<version>2.4.1</version>
+    	 <configuration>
+          <descriptorRefs>
+          	<descriptorRef>jar-with-dependencies</descriptorRef>
+          	</descriptorRefs>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>pirates.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+        	<execution>
+        		<id>make-assemby</id>
+        		<phase>package</phase>
+        		<goals>
+        			<goal>single</goal>
+        		</goals>
+        	</execution>
+        
+        </executions>
+	</plugin>
+	
+	
+	
+      
+    </plugins>
+  </build>
 
-<plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.5.0</version>
-                <configuration>
-                    <mainClass>pirates.App</mainClass>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>pirates.App</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-
-</plugins>
-
-</build>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.opencsv</groupId>
+  		<artifactId>opencsv</artifactId>
+  		<version>4.5</version>
+  		<scope>compile</scope>
+  	</dependency>
+  </dependencies>
 </project>
