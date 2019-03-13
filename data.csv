@@ -1,16 +1,2 @@
 SNO,OPERATION,APPLICATION,DATE
-1,Updated,1:openssl-libs-1.0.2k-16.amzn2.0.3.x86_64,03082019
-2,Updated,32:bind-license-9.9.4-73.amzn2.1.1.noarch,03082019
-3,Updated,32:bind-libs-9.9.4-73.amzn2.1.1.x86_64,03082019
-4,Updated,4:perl-libs-5.16.3-294.amzn2.x86_64,03082019
-5,Updated,4:perl-macros-5.16.3-294.amzn2.x86_64,03082019
-6,Updated,4:perl-5.16.3-294.amzn2.x86_64,03082019
-7,Updated,1:perl-Pod-Escapes-1.04-294.amzn2.noarch,03082019
-8,Updated,32:bind-utils-9.9.4-73.amzn2.1.1.x86_64,03082019
-9,Updated,32:bind-libs-lite-9.9.4-73.amzn2.1.1.x86_64,03082019
-10,Updated,1:openssl-1.0.2k-16.amzn2.0.3.x86_64,03082019
-11,Updated,1:openssl-devel-1.0.2k-16.amzn2.0.3.x86_64,03082019
-12,Updated,kernel-tools-4.14.104-95.84.amzn2.x86_64,03082019
-13,Updated,python2-botocore-1.12.92-2.amzn2.0.1.noarch,03082019
-14,Installed,kernel-4.14.104-95.84.amzn2.x86_64,03082019
-15,Updated,docker-18.06.1ce-8.amzn2.x86_64,03082019
+1,Updated,dotnet-host-2.2.3-1.x86_64,03132019
